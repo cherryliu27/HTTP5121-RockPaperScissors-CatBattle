@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="./app.js"></script>
+
+    <title>RockPaperScissors</title>
+</head>
+
+<body>
+    <h1>HELP YOUR CAT GET TO ITS FOOD</h1>
+    <div class="container">
+        <div class="game">
+            <div class="players-text">
+                <p>COMPUTER: <span class="cpuScore">0</span></p>
+                <p>YOU: <span class="playerScore">0</span></p>
+            </div>
+            <div class="result">
+                <img src="./Images/rock.png" alt="cpu-choice" class="cpu-hand">
+                <div class="result-text">
+                    <p class="winlose">YOU LOSE</p>
+                    <a class="restart" href="./index.html">RESTART?</a>
+                </div>
+                <img src="./Images/rock.png" alt="player-choice" class="player-hand">
+            </div>
+            <div class="playground">
+                <div class="characters">
+                    <div class="cpu-cat-container">
+                        <img src="./Images/cpucat.png" alt="cpu-character" id="cpu-cat">
+                    </div>
+                    <div class="player-cat-container">
+                        <img src="./Images/playercat.png" alt="player-character" id="player-cat">
+                    </div>
+                    <img src="./Images/fish.png" id="fish" alt="fish-character">
+                </div>
+                <div class="stage">
+                    <img src="./Images/platform.png" class="platform platform1" alt="platform1">
+                    <img src="./Images/platform.png" class="platform platform2" alt="platform2">
+                    <img src="./Images/platform.png" class="platform platform3" alt="platform3">
+                    <img src="./Images/platform.png" class="platform platform4" alt="platform4">
+                    <img src="./Images/platform.png" class="platform platform5" alt="platform5">
+                    <img src="./Images/platform.png" class="platform platform6" alt="platform6">
+                    <img src="./Images/platform.png" class="platform platform7" alt="platform7">
+
+                </div>
+            </div>
+        </div>
+        <div class="options">
+            <button class="rock">ROCK</button>
+            <button class="paper">PAPER</button>
+            <button class="scissors">SCISSORS</button>
+        </div>
+    </div>
+
+</body>
+
+</html>

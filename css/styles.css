@@ -1,0 +1,290 @@
+/* * --- GENERAL STYLING --- * */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "silkscreen", Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+
+/* * --- HEADING STYLING --- * */
+
+h1 {
+    font-size: 1.875rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 2.5rem;
+    padding: 0;
+}
+
+
+/* * --- GAME STYLING (HAND, SKY, RESULT)--- * */
+
+.game {
+    width: 875px;
+    height: 465px;
+    margin: auto;
+    overflow: hidden;
+    background: lightblue url("../Images/skybkg.png")
+}
+
+.players-text {
+    display: flex;
+    width: 80%;
+    margin: auto;
+    justify-content: space-between;
+}
+
+.players-text p {
+    margin: 0;
+    padding: 0;
+    margin-top: 1.5rem;
+    color: white;
+    font-size: 1.875rem;
+    font-weight: bold;
+}
+
+
+.result {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+}
+
+.result img {
+    position: relative;
+    top: -10px
+}
+
+.cpu-hand {
+    transform: scaleX(-1);
+}
+
+
+.result-text {
+    position: absolute;
+    text-align: center;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: auto;
+}
+
+.winlose {
+    font-size: 2.81rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.restart, .restart:visited {
+    font-size: 1.87rem;
+    text-decoration: none;
+    color: black;
+    margin-top: 0.87rem;
+}
+
+.restart:hover {
+    color: blue;
+}
+
+.battle-left {
+    animation: battle-left 1s forwards;
+}
+
+.battle-right {
+    animation: battle-right 1s forwards;
+}
+
+.result-text {
+    display: none;
+}
+
+/* * --- GAME STYLING (PLATFORM)--- * */
+
+.stage {
+    width: 900px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    left: -12.5px;
+}
+
+.platform {
+    width: 88px;
+}
+
+.playground {
+    position: relative;
+}
+
+
+/* * --- GAME STYLING (CHARACTERS)--- * */
+.characters {
+    position: relative;
+}
+
+
+.player-cat-container {
+    position: absolute;
+    top: -28px;
+    right: 10px;
+    z-index: 6;
+    width: 40px;
+    height: 40px;
+    transform: scaleX(-1) scale(2.5);
+    overflow: hidden;
+}
+
+
+.cpu-cat-container {
+    position: absolute;
+    top: -28px;
+    left: 10px;
+    z-index: 5;
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    transform: scale(2.5);
+}
+
+
+#fish {
+    transform: scaleX(-1);
+    position: absolute;
+    width: 78px;
+    top: -45px;
+    left: calc(50% - 39px);
+    animation: fishfloat 2s infinite;
+}
+
+
+/* * --- CHARACTER ANIMATION CLASSES --- * */
+
+.move-sprite {
+    animation: moveSpriteSheet 1s steps(5);
+}
+
+.cpu-jump {
+    animation: move-right 0.5s 0.5s forwards;
+}
+
+.player-jump {
+    animation: move-left 0.5s 0.5s forwards;
+}
+
+
+/* * --- BUTTON STYLING --- * */
+
+.options {
+    display: flex;
+    justify-content: center;
+    margin-top: 2.18rem;
+    gap: 4rem;
+}
+
+.options button {
+    font-family: inherit;
+    font-size: 1.25rem;
+    color: white;
+    background-color: #0F3D55;
+    border: none;
+    padding: 10px 20px;
+}
+
+.options button:hover {
+    background-color: #728792;
+    cursor: pointer;
+}
+
+.disabled {
+    cursor: pointer;
+    background-color: #728792;
+}
+
+
+/* * --- KEYFRAMES --- * */
+
+@keyframes fishfloat {
+    0% {
+        top: -45px
+    }
+
+    50% {
+        top: -55px;
+    }
+
+    100% {
+        top: -45px;
+    }
+}
+
+
+@keyframes moveSpriteSheet {
+    0% {
+        transform: translateX(0px);
+    }
+
+    100% {
+        transform: translateX(-200px);
+    }
+}
+
+
+
+@keyframes move-right {
+    0% {
+        transform: translateX(0px) translateY(0px) scale(2.5);
+    }
+
+    50% {
+        transform: translateX(90px) translateY(-40px) scale(2.5);
+    }
+
+    100% {
+        transform: translateX(140px) translateY(0px) scale(2.5);
+    }
+}
+
+
+@keyframes move-left {
+    0% {
+        transform: translateX(0px) translateY(0px) scale(2.5) scaleX(-1);
+    }
+
+    50% {
+        transform: translateX(-90px) translateY(-40px) scale(2.5) scaleX(-1);
+    }
+
+    100% {
+        transform: translateX(-140px) translateY(0px) scale(2.5) scaleX(-1);
+    }
+}
+
+
+
+@keyframes battle-left {
+    0% {
+        left: -80px;
+    }
+
+    50% {
+        left: 0px;
+    }
+}
+
+@keyframes battle-right {
+    0% {
+        right: -80px;
+    }
+
+    50% {
+        right: 0px;
+    }
+}
